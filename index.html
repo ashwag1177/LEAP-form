@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --main-blue: #71b7e6;
+  --main-purple: #9b59b6;
+  --main-grey: #ccc;
+  --sub-grey: #d9d9d9;
+}
+
+body {
+  display: flex;
+  flex-direction:column;
+  height: 100vh;
+  /*justify-content: center; center vertically */
+  align-items: center; /* center horizontally */
+  /*background: linear-gradient(129deg, #2d7f8bc9, #3f296ed9);*/
+  background-image: linear-gradient(226deg, #2d7f8bc9 0%, #3f296ec7 35%, #2d7f8bc9 100%);;
+  padding: 10px;
+}
+/* container and form */
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.container .title::before {
+  content: "";
+  position: absolute;
+  height: 3.5px;
+  width: 30px;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+  left: 0;
+  bottom: 0;
+}
+
+/*.container form .user__details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;*/
+
+/* inside the form user details */
+form .user__details .input__box {
+  /*width: calc(100% / 2 - 20px);*/
+  margin-bottom: 15px;
+}
+
+.user__details .input__box .details {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+  color: #544a78;
+}
+.user__details .input__box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--main-grey);
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  padding-left: 30px ;
+}
+.icons{
+  position: relative;
+    left: 10px;
+    top: -35px;
+    color: #a7a4a4;
+}
+
+/*.user__details .input__box input:focus,
+.user__details .input__box input:valid {
+  border-color: var(--main-purple);
+}*/
+.user__details .input__box input:focus
+ {
+  border-color: var(--main-purple);
+}
+
+/* inside the form gender details */
+
+form .gender__details .gender__title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+form .gender__details .category {
+  display: flex;
+  width: 80%;
+  margin: 15px 0;
+  justify-content: space-between;
+}
+
+.gender__details .category label {
+  display: flex;
+  align-items: center;
+}
+
+.gender__details .category .dot {
+  height: 18px;
+  width: 18px;
+  background: var(--sub-grey);
+  border-radius: 50%;
+  margin: 10px;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category .one,
+#dot-2:checked ~ .category .two,
+#dot-3:checked ~ .category .three {
+  border-color: var(--sub-grey);
+  background: var(--main-purple);
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+/* submit button */
+form .button {
+  height: 45px;
+  margin: 45px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background: linear-gradient(129deg, #2d7f8bc9, #3f296ed9);
+  transition: all 0.3s ease;
+}
+
+form .button input:hover {
+  background: linear-gradient(-135deg, #2d7f8bc9, #3f296ed9);
+}
+img{
+    width:170px;
+    margin: 40px;
+
+}
+input:focus::placeholder {
+  color: transparent;
+}
+.title-text p{
+  font-size: 18px;
+  background: -webkit-linear-gradient(221deg, #2d7f8bc9, #35235cd9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight:bolder;
+  margin-bottom:40px;
+  font-size: 20px;
+}
+@media only screen and (max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+
+  form .user__details .input__box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  form .gender__details .category {
+    width: 100%;
+  }
+
+  .container form .user__details {
+    max-height: 470px;
+    overflow-y: scroll;
+  }
+
+  .user__details::-webkit-scrollbar {
+    width: 0;
+  }
+  body{
+      padding: 40px;
+  }
+}
+.container2 {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  display: none;
+}
+.container2 p{
+  display: flex;
+    align-content: center;
+
+    justify-content: center;
+}
+
+</style>
+</head>
+<body>
+<div>
+ <img src="img/icon1.png"  width="100" >
+</div>
+<div class="container" id="myDIV1">
+   <!--<div class="title">Registration</div>-->
+   <iframe name="hiddensumbit" id="hiddensumbit" style="display: none;" onload="if(submitted){window.location='submit.html';}"></iframe>
+    <form action="https://docs.google.com/forms/u/1/d/e/1FAIpQLScZXTdJYjuE3m3i4DVRGYSePFsR1bZvCzzSWilYS-htgGUIVg/formResponse"  method="POST" id="sheetdb-form" autocomplete="off" name="google-sheet" target="hiddensumbit" onsubmit="submitted=true">
+      <div class="user__details">
+       <div class="title-text"><p>Take the first step to be a partner with Taibah Valley and create our digital future…
+      </p></div>
+      <div class="input__box">
+        <span class="details">Email</span>
+        <input type="email" placeholder="email@gmail.com" id="email" name="entry.387069845" required>
+        <span class="icons"><i class="fa fa-envelope"></i></span>
+      </div>
+        <div class="input__box">
+          <span class="details">Name</span>
+         
+          <input type="text" placeholder="Ahmad" name="entry.1490302446" id="name"
+          >
+          <span class="icons"> <i class="fa fa-user" ></iclass></i></span>
+        </div>
+
+        <div class="input__box">
+          <span class="details"> Phone Number</span>
+          <input type="tel"  placeholder="054...." name="entry.1608024874" id="phone" >
+          <span class="icons"><i class="fa fa-phone"></i></span>
+        </div>
+
+
+      </div>
+
+      <div class="button" onclick="myFunction1()">
+        <input type="submit" value="submit"  id="submit"  >
+      </div>
+    </form>
+  </div>
+
+
+<p class="text"></p>
+
+
+<div class="container2" id="myDIV2">
+
+ <p>  Thankyou, Taibah Valley appreciate your interest in partnership with us.  </p>
+
+ </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script type="text/javasscript"> var submitted=false </script>
+
+
+
+</body>
+</html>
